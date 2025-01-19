@@ -30,7 +30,7 @@ func main() {
 	flag.BoolVar(&dumpMode, "dump", false, "prints the grep command rather than executing it")
 
 	var colorMode bool
-	flag.BoolVar(&colorMode, "color", false, "display color-highlighting the matches in output")
+	flag.BoolVar(&colorMode, "color", true, "display color-highlighting the matches in output")
 
 	flag.Parse()
 
