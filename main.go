@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"encoding/json"
 	"errors"
 	"flag"
@@ -11,6 +12,9 @@ import (
 	"path/filepath"
 	"strings"
 )
+
+//go:embed patterns/*
+var patterns embed.FS
 
 type pattern struct {
 	Flags    string   `json:"flags,omitempty"`
@@ -123,7 +127,6 @@ func main() {
 		cmd.Stderr = os.Stderr
 		cmd.Run()
 	}
-
 }
 
 func getPatternDir() (string, error) {
